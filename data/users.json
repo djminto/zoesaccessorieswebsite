@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1732556400000,
+    "username": "test_user",
+    "email": "test@zoies.com",
+    "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+    "profilePicture": "",
+    "joinedDate": "2025-11-25T12:00:00.000Z",
+    "token": "test_token_123456"
+  },
+  {
+    "id": 1764116069554,
+    "username": "djminto",
+    "email": "danielminto13@gmail.com",
+    "password": "2a5774ac006bb85ca733cd6af37c73beb2d7578027d720142022dc1c979cd32f",
+    "profilePicture": "",
+    "joinedDate": "2025-11-26T00:14:29.555Z",
+    "token": "8cd233127a9ade9349d70b060201a0f7d49102d96566d30420ac96acf37801c3"
+  },
+  {
+    "id": 1764179823760,
+    "username": "Dminto123",
+    "email": "danielminto12@gmail.com",
+    "password": "2a5774ac006bb85ca733cd6af37c73beb2d7578027d720142022dc1c979cd32f",
+    "profilePicture": "",
+    "joinedDate": "2025-11-26T17:57:03.760Z",
+    "token": "802b767bfd74fae2efa832bbfc3db951c199f6cad4df62139ab35b60b9e82a0b"
+  },
+  {
+    "id": 1764180026645,
+    "username": "Dminto123",
+    "email": "danielminto11@gmail.com",
+    "password": "2a5774ac006bb85ca733cd6af37c73beb2d7578027d720142022dc1c979cd32f",
+    "profilePicture": "",
+    "joinedDate": "2025-11-26T18:00:26.645Z",
+    "token": "953a7bab51e5e17f9228bdca196be1aa4f458e4240951e9316b911c8273ae889"
+  }
+]
