@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Zoie's Accessories</title>
+    <link rel="icon" href="Image/Pink Bracelet.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="admin-page">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-header-content">
+            <div class="admin-logo">
+                <img src="Image/Zoies logo.png" alt="Zoie's">
+                <span>Admin Dashboard</span>
+            </div>
+            
+            <div class="admin-user">
+                <span id="adminName">Admin</span>
+                <button class="btn-logout" id="adminLogout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav-link active" data-section="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="admin-nav-link" data-section="orders">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Orders</span>
+                </a>
+                <a href="#" class="admin-nav-link" data-section="products">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                <a href="#" class="admin-nav-link" data-section="customers">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </a>
+                <a href="#" class="admin-nav-link" data-section="reviews">
+                    <i class="fas fa-star"></i>
+                    <span>Reviews</span>
+                </a>
+                <a href="index.html" class="admin-nav-link">
+                    <i class="fas fa-globe"></i>
+                    <span>View Website</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <!-- Dashboard Section -->
+            <section class="admin-section active" id="dashboard-section">
+                <h1>Dashboard Overview</h1>
+                
+                <div class="admin-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background: #ff69b4;">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalOrdersCount">0</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background: #9c27b0;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="pendingOrdersCount">0</h3>
+                            <p>Pending Orders</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background: #4caf50;">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="completedOrdersCount">0</h3>
+                            <p>Completed Orders</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background: #2196f3;">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalRevenue">$0</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <div class="table-container">
+                        <table class="admin-table" id="recentOrdersTable">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section class="admin-section" id="orders-section">
+                <div class="section-header-flex">
+                    <h1>Manage Orders</h1>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-status="all">All</button>
+                        <button class="filter-tab" data-status="pending">Pending</button>
+                        <button class="filter-tab" data-status="processing">Processing</button>
+                        <button class="filter-tab" data-status="shipped">Shipped</button>
+                        <button class="filter-tab" data-status="completed">Completed</button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="admin-table" id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="admin-section" id="products-section">
+                <div class="section-header-flex">
+                    <h1>Manage Products</h1>
+                    <button class="btn btn-primary" id="addProductBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Product</span>
+                    </button>
+                </div>
+                
+                <div class="products-grid-admin" id="productsGridAdmin">
+                    <!-- Products loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Customers Section -->
+            <section class="admin-section" id="customers-section">
+                <h1>Customers</h1>
+                
+                <div class="table-container">
+                    <table class="admin-table" id="customersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Joined</th>
+                                <th>Orders</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="admin-section" id="reviews-section">
+                <h1>Customer Reviews</h1>
+                
+                <div class="reviews-grid-admin" id="reviewsGridAdmin">
+                    <!-- Reviews loaded dynamically -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Order Details</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="orderDetailsBody">
+                <!-- Order details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal" id="addProductModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <button class="modal-close" id="closeAddProduct">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addProductForm">
+                    <div class="form-group">
+                        <label for="productName">Product Name *</label>
+                        <input type="text" id="productName" name="productName" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productPrice">Price (JMD) *</label>
+                        <input type="number" id="productPrice" name="productPrice" min="0" step="0.01" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productCategory">Category *</label>
+                        <select id="productCategory" name="productCategory" required autocomplete="off">
+                            <option value="">Select Category</option>
+                            <option value="bracelets">Bracelets</option>
+                            <option value="scrunchies">Scrunchies</option>
+                            <option value="bows">Silk Bows</option>
+                            <option value="jewelry">Jewelry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productImage">Image Path *</label>
+                        <input type="text" id="productImage" name="productImage" placeholder="Image/product.png" required autocomplete="off">
+                        <small>Enter the path relative to the Image folder</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productBadge">Badge</label>
+                        <select id="productBadge" name="productBadge" autocomplete="off">
+                            <option value="New">New</option>
+                            <option value="Hot">Hot</option>
+                            <option value="Sale">Sale</option>
+                            <option value="Bestseller">Bestseller</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-plus"></i> Add Product
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js?v=1732727000"></script>
+</body>
+</html>

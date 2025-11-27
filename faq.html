@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Zoie's Accessories</title>
+    <link rel="icon" href="Image/Pink Bracelet.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span>✨ FREE SHIPPING ON ALL ORDERS ✨</span>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="Image/Zoies logo.png" alt="Zoie's">
+                    <span>Zoie's Accessories</span>
+                </a>
+                
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" id="searchIcon"><i class="fas fa-search"></i></a>
+                    <div class="user-menu-container">
+                        <a href="#" id="userIcon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" id="userDropdown">
+                            <div id="loggedInMenu" style="display: none;">
+                                <div class="dropdown-user-info">
+                                    <img src="" alt="Profile" id="dropdownProfilePic" class="dropdown-profile-pic">
+                                    <span id="dropdownUsername">User</span>
+                                </div>
+                                <a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
+                                <a href="dashboard.html"><i class="fas fa-box"></i> My Orders</a>
+                                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                            <div id="loggedOutMenu">
+                                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                                <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- FAQ Content -->
+    <section class="legal-page">
+        <div class="container">
+            <div class="legal-content">
+                <h1>Frequently Asked Questions (FAQ)</h1>
+                <p class="last-updated">Your questions answered!</p>
+                
+                <div class="faq-section">
+                    <h2>🛍️ Products & Shopping</h2>
+                    
+                    <div class="faq-item">
+                        <h3>What products do you offer?</h3>
+                        <p>We specialize in handcrafted accessories including:</p>
+                        <ul>
+                            <li><strong>Bracelets</strong> - Various styles for both male and female ($350-$500)</li>
+                            <li><strong>Luxury Scrunchies</strong> - Gentle on hair, beautiful designs ($200)</li>
+                            <li><strong>Silk Bows</strong> - Perfect for gifts and special occasions ($400)</li>
+                            <li><strong>Jewelry</strong> - Elegant gold chain pieces ($500+)</li>
+                        </ul>
+                        <p>All items are handcrafted with love and premium materials!</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How can I place an order?</h3>
+                        <p>Simply browse our <a href="shop.html">Shop</a>, add items to your cart, and proceed to checkout. You can shop as a guest or create an account for faster checkout and order tracking.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Are your products handmade?</h3>
+                        <p>Yes! Every single item is handcrafted with care and attention to detail. We use high-quality beads, silk fabrics, and hypoallergenic metals to ensure premium quality.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h2>💰 Pricing & Payment</h2>
+                    
+                    <div class="faq-item">
+                        <h3>What currency are your prices in?</h3>
+                        <p>All prices are in Jamaican Dollars (JMD). Our products range from $200 to $500+.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept multiple payment methods:</p>
+                        <ul>
+                            <li>Credit/Debit Cards (Visa, MasterCard)</li>
+                            <li>Cash on Delivery (COD)</li>
+                            <li>Bank Transfer</li>
+                            <li>Mobile Money</li>
+                        </ul>
+                        <p>All transactions are secure and encrypted.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do you offer discounts or promotions?</h3>
+                        <p>Yes! We regularly offer special promotions and discounts. Follow us on social media or subscribe to our newsletter to stay updated. We also offer bulk order discounts for 10+ items.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h2>🚚 Shipping & Delivery</h2>
+                    
+                    <div class="faq-item">
+                        <h3>Do you offer free shipping?</h3>
+                        <p><strong>Yes!</strong> We offer FREE shipping on ALL orders across Jamaica. No minimum purchase required!</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How long does delivery take?</h3>
+                        <p>Delivery times vary by location:</p>
+                        <ul>
+                            <li><strong>Kingston & St. Andrew:</strong> 1-2 business days</li>
+                            <li><strong>Other parishes:</strong> 2-4 business days</li>
+                        </ul>
+                        <p>We ship to all 14 parishes in Jamaica!</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Can I track my order?</h3>
+                        <p>Absolutely! Once you log into your account, you can track your order status in the "My Orders" section of your profile. You'll also receive email and WhatsApp updates.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do you ship internationally?</h3>
+                        <p>Currently, we only ship within Jamaica. We're working on expanding to international shipping in the future!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h2>↩️ Returns & Refunds</h2>
+                    
+                    <div class="faq-item">
+                        <h3>What is your return policy?</h3>
+                        <p>We accept returns within <strong>7 days</strong> of delivery. Items must be:</p>
+                        <ul>
+                            <li>Unused and in original condition</li>
+                            <li>In original packaging</li>
+                            <li>Accompanied by proof of purchase</li>
+                        </ul>
+                        <p><strong>Note:</strong> Custom/personalized items cannot be returned.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How do I return an item?</h3>
+                        <p>Contact us via email (zoesacessories23@gmail.com) or WhatsApp (+1876-544-0766) with your order number. We'll guide you through the return process.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>When will I receive my refund?</h3>
+                        <p>Refunds are processed within 7-10 business days after we receive and inspect the returned item. You'll be notified via email once the refund is processed.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What if I receive a damaged item?</h3>
+                        <p>We'll replace damaged or defective items immediately at no cost! Just contact us within 48 hours of delivery with photos of the damage.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h2>🎨 Custom Orders</h2>
+                    
+                    <div class="faq-item">
+                        <h3>Do you accept custom orders?</h3>
+                        <p>Yes, we LOVE creating custom orders! You can customize:</p>
+                        <ul>
+                            <li>Colors and patterns</li>
+                            <li>Size and length</li>
+                            <li>Bead combinations</li>
+                            <li>Personal engravings</li>
+                        </ul>
+                        <p>Custom orders start at $400 and are ready in 3-5 business days.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How do I place a custom order?</h3>
+                        <p>Contact us via WhatsApp (+1876-544-0766) or email (zoesacessories23@gmail.com) with your custom design ideas. We'll work with you to create the perfect piece!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h2>🎁 Gift Ideas & Bulk Orders</h2>
+                    
+                    <div class="faq-item">
+                        <h3>Do you offer gift wrapping?</h3>
+                        <p>Yes! All items come beautifully packaged, and gift wrapping is available on request at no extra charge. You can also include a personalized message for free!</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do you offer bulk order discounts?</h3>
+                        <p>Absolutely! We offer great discounts on bulk orders:</p>
+                        <ul>
+                            <li>Minimum order: 10+ items</li>
+                            <li>Discounts: 10-20% off based on quantity</li>
+                            <li>Perfect for events, parties, or corporate gifts</li>
+                        </ul>
+                        <p>Contact us for a custom quote!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h2>📞 Contact & Support</h2>
+                    
+                    <div class="faq-item">
+                        <h3>How can I contact you?</h3>
+                        <p>We're here to help!</p>
+                        <ul>
+                            <li><strong>Email:</strong> zoesacessories23@gmail.com</li>
+                            <li><strong>WhatsApp:</strong> +1876-544-0766</li>
+                            <li><strong>Response Time:</strong> Usually within 1-2 hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What are your business hours?</h3>
+                        <p>We're available Monday to Saturday, 9:00 AM - 6:00 PM (Jamaica Time). Messages sent outside business hours will be answered the next business day.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do I need an account to shop?</h3>
+                        <p>No, you can shop as a guest. However, creating an account gives you benefits like:</p>
+                        <ul>
+                            <li>Order tracking</li>
+                            <li>Faster checkout</li>
+                            <li>Order history</li>
+                            <li>Exclusive offers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-cta">
+                    <h2>Still have questions?</h2>
+                    <p>We're here to help! Contact us anytime.</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:zoesacessories23@gmail.com" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Email Us
+                        </a>
+                        <a href="https://wa.me/18765440766" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zoie's Accessories</h3>
+                    <p>Handcrafted accessories made with love 💖</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="mailto:zoesacessories23@gmail.com">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> zoesacessories23@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +1876-544-0766</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jamaica</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zoie's Accessories. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <div class="avatar-girl"></div>
+            </div>
+            <div class="chatbot-info">
+                <h4>Zoie Assistant</h4>
+                <span class="status-online">Online</span>
+            </div>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <!-- Messages will be added dynamically -->
+        </div>
+        
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

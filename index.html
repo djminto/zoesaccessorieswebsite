@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoie's Accessories - Handcrafted Jewelry & Gifts</title>
+    <link rel="icon" href="Image/Pink Bracelet.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span>✨ FREE SHIPPING ON ALL ORDERS ✨</span>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="Image/Zoies logo.png" alt="Zoie's">
+                    <span>Zoie's Accessories</span>
+                </a>
+                
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="icon-btn search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="user-dropdown">
+                        <a href="#" class="icon-btn user-btn" id="userBtn">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" id="userDropdown">
+                            <!-- Dropdown content loaded dynamically -->
+                        </div>
+                    </div>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate-slide-left">
+                    <h1>Discover Your Perfect <span class="gradient-text">Accessory</span></h1>
+                    <p>Handcrafted bracelets, scrunchies, silk bows, and candles made with love. Each piece tells a unique story.</p>
+                    <div class="hero-buttons">
+                        <a href="shop.html" class="btn btn-primary">
+                            <span>Shop Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#products" class="btn btn-outline">
+                            <span>View Collection</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image animate-slide-right">
+                    <div class="floating-card">
+                        <img src="Image/banner_4.png" alt="Zoie's Accessories">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card animate-fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>Enjoy free delivery on all orders island-wide</p>
+                </div>
+                
+                <div class="feature-card animate-fade-up" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our team is always here to help you</p>
+                </div>
+                
+                <div class="feature-card animate-fade-up" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure and encrypted transactions</p>
+                </div>
+                
+                <div class="feature-card animate-fade-up" style="animation-delay: 0.3s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Handcrafted with premium materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Discover our handpicked collection</p>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+            
+            <div class="text-center">
+                <a href="shop.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-subtitle">Find your perfect style</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="shop.html?category=bracelets" class="category-card animate-scale">
+                    <div class="category-image">
+                        <img src="Image/Fem-Bracelets_Category.png" alt="Bracelets">
+                    </div>
+                    <h3>Bracelets</h3>
+                </a>
+                
+                <a href="shop.html?category=scrunchies" class="category-card animate-scale">
+                    <div class="category-image">
+                        <img src="Image/Scrunchies_ Category.png" alt="Scrunchies">
+                    </div>
+                    <h3>Scrunchies</h3>
+                </a>
+                
+                <a href="shop.html?category=bows" class="category-card animate-scale">
+                    <div class="category-image">
+                        <img src="Image/Silk_Bows 2.png" alt="Silk Bows">
+                    </div>
+                    <h3>Silk Bows</h3>
+                </a>
+                
+                <a href="shop.html?category=jewelry" class="category-card animate-scale">
+                    <div class="category-image">
+                        <img src="Image/Jewelry.png" alt="Jewelry">
+                    </div>
+                    <h3>Jewelry</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image animate-slide-left">
+                    <img src="Image/banner_4.png" alt="About Zoie's Accessories">
+                    <div class="about-decoration"></div>
+                </div>
+                <div class="about-text animate-slide-right">
+                    <span class="section-badge">About Us</span>
+                    <h2 class="section-title">Handcrafted with Love & Passion</h2>
+                    <p>Welcome to Zoie's Accessories, where style meets craftsmanship! We specialize in creating unique, handcrafted accessories that help you express your individuality.</p>
+                    
+                    <p>Each piece is carefully designed and made with premium materials, ensuring both beauty and durability. From elegant bracelets to luxurious scrunchies and silk bows, every item tells a story of dedication and artistry.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4>Made with Love</h4>
+                                <p>Every product is handcrafted with care and attention to detail</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div>
+                                <h4>Premium Quality</h4>
+                                <p>We use only the finest materials for lasting beauty</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <h4>Unique Designs</h4>
+                                <p>Stand out with our one-of-a-kind accessories</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="shop.html" class="btn btn-primary">
+                        <span>Explore Our Collection</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you!</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>zoesacessories23@gmail.com</p>
+                        <a href="mailto:zoesacessories23@gmail.com" class="contact-link">Send Email</a>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>+1876-544-0766</p>
+                        <a href="https://wa.me/18765440766" class="contact-link" target="_blank">Chat Now</a>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>@zoe._accessories</p>
+                        <a href="https://instagram.com/zoe._accessories" class="contact-link" target="_blank">Follow Us</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm" action="mailto:zoesacessories23@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" name="name" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Your Email</label>
+                                <input type="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="subject" placeholder="How can we help?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" rows="5" placeholder="Tell us more..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Community</h2>
+                <p>Subscribe to get special offers, free giveaways, and exclusive deals</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-white">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Zoie's</h3>
+                    <p>We create beautiful, handcrafted accessories that add elegance to your everyday style. Each piece is made with love and care.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/18765440766" class="social-icon" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/zoe._accessories/" class="social-icon" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:zoesacessories23@gmail.com" class="social-icon" target="_blank" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links-grid">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="reviews.html">Reviews</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                            <li><a href="return-refund.html">Returns & Refunds</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="orders.html">Track Order</a></li>
+                        <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                        <li><a href="return-refund.html">Returns & Refunds</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact-tight">
+                        <a href="mailto:zoesacessories23@gmail.com" class="contact-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/18765440766" class="contact-icon" title="WhatsApp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/zoe._accessories/" class="contact-icon" title="Instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact-details">
+                        <span><a href="mailto:zoesacessories23@gmail.com">zoesacessories23@gmail.com</a></span><br>
+                        <span><a href="https://wa.me/18765440766" target="_blank">+1876-544-0766</a></span><br>
+                        <span><a href="https://www.instagram.com/zoe._accessories/" target="_blank">@zoe._accessories</a></span><br>
+                        <span><i class="fas fa-map-marker-alt"></i> Jamaica</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zoie's Accessories. All rights reserved. Made with ❤️ in Jamaica</p>
+                <div id="adminLink" style="margin-top: 10px; display: none;">
+                    <a href="admin.html" style="color: #ff1493; text-decoration: none; font-size: 0.9rem;">
+                        <i class="fas fa-crown"></i> Admin Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <!-- Welcome Animation -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-animation">
+            <div class="welcome-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="welcome-title">Welcome to Zoie's!</h2>
+            <p class="welcome-message" id="welcomeMessage">Loading...</p>
+            <div class="welcome-sparkles">
+                <span class="sparkle"></span>
+                <span class="sparkle"></span>
+                <span class="sparkle"></span>
+                <span class="sparkle"></span>
+                <span class="sparkle"></span>
+                <span class="sparkle"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

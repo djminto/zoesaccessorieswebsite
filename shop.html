@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Zoie's Accessories</title>
+    <link rel="icon" href="Image/Pink Bracelet.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span>✨ FREE SHIPPING ON ALL ORDERS ✨</span>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="Image/Zoies logo.png" alt="Zoie's">
+                    <span>Zoie's Accessories</span>
+                </a>
+                
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="icon-btn search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="user-dropdown">
+                        <a href="#" class="icon-btn user-btn" id="userBtn">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" id="userDropdown">
+                            <!-- Dropdown content loaded dynamically -->
+                        </div>
+                    </div>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Shop</h1>
+            <p>Discover our complete collection of handcrafted accessories</p>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="shop-sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option" for="category-all">
+                                <input type="radio" id="category-all" name="category" value="all" checked>
+                                <span>All Products</span>
+                            </label>
+                            <label class="filter-option" for="category-bracelets">
+                                <input type="radio" id="category-bracelets" name="category" value="bracelets">
+                                <span>Bracelets</span>
+                            </label>
+                            <label class="filter-option" for="category-scrunchies">
+                                <input type="radio" id="category-scrunchies" name="category" value="scrunchies">
+                                <span>Scrunchies</span>
+                            </label>
+                            <label class="filter-option" for="category-bows">
+                                <input type="radio" id="category-bows" name="category" value="bows">
+                                <span>Silk Bows</span>
+                            </label>
+                            <label class="filter-option" for="category-jewelry">
+                                <input type="radio" id="category-jewelry" name="category" value="jewelry">
+                                <span>Jewelry</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="filter-options">
+                            <label class="filter-option" for="price-0-500">
+                                <input type="checkbox" id="price-0-500" name="price-range" value="0-500">
+                                <span>$0 - $500 JMD</span>
+                            </label>
+                            <label class="filter-option" for="price-500-1000">
+                                <input type="checkbox" id="price-500-1000" name="price-range" value="500-1000">
+                                <span>$500 - $1000 JMD</span>
+                            </label>
+                            <label class="filter-option" for="price-1000-plus">
+                                <input type="checkbox" id="price-1000-plus" name="price-range" value="1000+">
+                                <span>$1000+ JMD</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <label for="sortBy">
+                            <h3>Sort By</h3>
+                        </label>
+                        <select class="sort-select" id="sortBy" name="sort-by" autocomplete="off">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="shop-content">
+                    <div class="shop-header-bar">
+                        <p class="results-count">Showing <span id="resultsCount">0</span> products</p>
+                        <button class="filter-toggle" id="filterToggle">
+                            <i class="fas fa-filter"></i> Filters
+                        </button>
+                    </div>
+                    
+                    <div class="products-grid" id="shopProductsGrid">
+                        <!-- Products loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Zoie's</h3>
+                    <p>We create beautiful, handcrafted accessories that add elegance to your everyday style.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/18765440766" class="social-icon" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/zoe._accessories/" class="social-icon" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:zoesacessories23@gmail.com" class="social-icon" target="_blank" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links-grid">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="reviews.html">Reviews</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="return-refund.html">Return & Refund</a></li>
+                            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact-tight">
+                        <a href="mailto:zoesacessories23@gmail.com" class="contact-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/18765440766" class="contact-icon" title="WhatsApp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/zoe._accessories/" class="contact-icon" title="Instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact-details">
+                        <span><a href="mailto:zoesacessories23@gmail.com">zoesacessories23@gmail.com</a></span><br>
+                        <span><a href="https://wa.me/18765440766" target="_blank">+1876-544-0766</a></span><br>
+                        <span><a href="https://www.instagram.com/zoe._accessories/" target="_blank">@zoe._accessories</a></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zoie's Accessories. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

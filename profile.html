@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Zoie's Accessories</title>
+    <link rel="icon" href="Image/Pink Bracelet.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span>✨ FREE SHIPPING ON ALL ORDERS ✨</span>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="Image/Zoies logo.png" alt="Zoie's">
+                    <span>Zoie's Accessories</span>
+                </a>
+                
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="icon-btn search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="user-dropdown">
+                        <a href="#" class="icon-btn user-btn active" id="userBtn">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" id="userDropdown">
+                            <!-- Dropdown content loaded dynamically -->
+                        </div>
+                    </div>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-layout">
+                <!-- Profile Sidebar -->
+                <aside class="profile-sidebar">
+                    <div class="profile-card">
+                        <div class="profile-avatar-container">
+                            <div class="profile-avatar" id="profileAvatar">
+                                <img src="" alt="Profile" id="avatarImage">
+                                <div class="avatar-upload">
+                                    <input type="file" id="avatarInput" accept="image/*">
+                                    <label for="avatarInput">
+                                        <i class="fas fa-camera"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 id="profileUsername">Loading...</h3>
+                        <p id="profileEmail">Loading...</p>
+                    </div>
+                    
+                    <nav class="profile-nav">
+                        <a href="#" class="profile-nav-link active" data-tab="overview">
+                            <i class="fas fa-user"></i> My Profile
+                        </a>
+                        <a href="#" class="profile-nav-link" data-tab="orders">
+                            <i class="fas fa-shopping-bag"></i> My Orders
+                        </a>
+                        <a href="#" class="profile-nav-link" data-tab="settings">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <a href="#" class="profile-nav-link logout-link" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Profile Content -->
+                <div class="profile-content">
+                    <!-- Overview Tab -->
+                    <div class="profile-tab active" id="overview-tab">
+                        <h2>My Profile</h2>
+                        
+                        <div class="profile-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div>
+                                    <h4 id="totalOrders">0</h4>
+                                    <p>Total Orders</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-star"></i>
+                                <div>
+                                    <h4 id="totalReviews">0</h4>
+                                    <p>Reviews Written</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h4 id="totalWishlist">0</h4>
+                                    <p>Wishlist Items</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-info-card">
+                            <h3>Personal Information</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Username</label>
+                                    <p id="displayUsername">-</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email</label>
+                                    <p id="displayEmail">-</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Member Since</label>
+                                    <p id="memberSince">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders Tab -->
+                    <div class="profile-tab" id="orders-tab">
+                        <h2>My Orders</h2>
+                        <div class="orders-list" id="ordersList">
+                            <!-- Orders loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div class="profile-tab" id="settings-tab">
+                        <h2>Account Settings</h2>
+                        
+                        <div class="settings-card">
+                            <h3>Update Profile</h3>
+                            <form id="updateProfileForm">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="text" id="newUsername" placeholder="Enter new username">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    <span>Update Username</span>
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <h3>Change Password</h3>
+                            <form id="changePasswordForm">
+                                <div class="form-group">
+                                    <label>Current Password</label>
+                                    <input type="password" id="currentPassword" placeholder="Enter current password" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>New Password</label>
+                                    <input type="password" id="newPassword" placeholder="Enter new password" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Confirm New Password</label>
+                                    <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-key"></i>
+                                    <span>Change Password</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Zoie's</h3>
+                    <p>We create beautiful, handcrafted accessories that add elegance to your everyday style.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zoie's Accessories. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

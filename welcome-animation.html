@@ -1,0 +1,251 @@
+<!-- Welcome Animation Overlay -->
+<div class="welcome-overlay" id="welcomeOverlay">
+    <div class="welcome-animation">
+        <div class="welcome-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h2 class="welcome-title">Welcome to Zoie's!</h2>
+        <p class="welcome-message" id="welcomeMessage">Loading...</p>
+        <div class="welcome-sparkles">
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+        </div>
+    </div>
+</div>
+
+<style>
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.95) 0%, rgba(255, 20, 147, 0.95) 100%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.welcome-overlay.active {
+    display: flex;
+}
+
+.welcome-animation {
+    text-align: center;
+    color: white;
+    animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+.welcome-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: float3d 3s ease-in-out infinite, rotateY 2s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+.welcome-icon i {
+    font-size: 4rem;
+    color: #ff69b4;
+    animation: checkPulse 1.5s ease-in-out infinite;
+}
+
+.welcome-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.8s ease 0.3s both;
+}
+
+.welcome-message {
+    font-size: 1.5rem;
+    opacity: 0.95;
+    animation: slideUp 0.8s ease 0.5s both;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-sparkles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px white;
+    animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+.sparkle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation-delay: 0.3s;
+}
+
+.sparkle:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 0.6s;
+}
+
+.sparkle:nth-child(4) {
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 0.9s;
+}
+
+.sparkle:nth-child(5) {
+    top: 50%;
+    left: 5%;
+    animation-delay: 1.2s;
+}
+
+.sparkle:nth-child(6) {
+    top: 50%;
+    right: 5%;
+    animation-delay: 1.5s;
+}
+
+@keyframes float3d {
+    0%, 100% {
+        transform: translateY(0px) translateZ(0px);
+    }
+    50% {
+        transform: translateY(-20px) translateZ(30px);
+    }
+}
+
+@keyframes rotateY {
+    0%, 100% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes checkPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotateX(-30deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateX(0deg);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+    
+    .welcome-message {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .welcome-icon i {
+        font-size: 3rem;
+    }
+}
+</style>
+
+<script>
+function showWelcomeAnimation(username) {
+    const overlay = document.getElementById('welcomeOverlay');
+    const message = document.getElementById('welcomeMessage');
+    
+    if (!overlay || !message) return;
+    
+    message.textContent = `Welcome, ${username}! 🎉`;
+    overlay.classList.add('active');
+    
+    // Auto hide after 3 seconds
+    setTimeout(() => {
+        overlay.classList.remove('active');
+    }, 3000);
+}
+
+// Call this function after successful login/register
+// Example: showWelcomeAnimation('John Doe');
+</script>
