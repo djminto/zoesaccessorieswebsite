@@ -1059,7 +1059,6 @@ if (checkoutForm) {
     });
 }
 
-// ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded on:', window.location.pathname);
     console.log('Current user on page load:', currentUser);
@@ -1109,6 +1108,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.location.pathname.includes('profile.html')) {
         loadProfile();
+    }
+});
+
+// ========== DEMO LOGIN/REGISTER (FRONTEND ONLY) ========== 
+// Store demo users in localStorage
+function getDemoUsers() {
+    return JSON.parse(localStorage.getItem('demoUsers')) || [];
+}
+function saveDemoUsers(users) {
+    localStorage.setItem('demoUsers', JSON.stringify(users));
+}
+function demoRegister(email, password, username) {
+    let users = getDemoUsers();
+    if (users.find(u => u.email === email)) {
+        return { success: false, message: 'Email already registered.' };
+    }
+    const newUser = { email, password, username: username || email.split('@')[0] };
+    users.push(newUser);
+    saveDemoUsers(users);
+    return { success: true, user: newUser };
+}
+function demoLogin(email, password) {
+    let users = getDemoUsers();
+    const user = users.find(u => u.email === email && u.password === password);
+    if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        return { success: true, user };
+    }
+    return { success: false, message: 'Invalid email or password.' };
+}
+function demoLogout() {
+    localStorage.removeItem('currentUser');
+}
+
+// Intercept login/register forms
+document.addEventListener('DOMContentLoaded', () => {
+    // Login form
+    const loginForm = document.querySelector('form#loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = loginForm.querySelector('input[type="email"]').value.trim();
+            const password = loginForm.querySelector('input[type="password"]').value;
+            const result = demoLogin(email, password);
+            const errorDiv = document.getElementById('loginError');
+            if (result.success) {
+                window.location.href = 'index.html';
+            } else {
+                if (errorDiv) errorDiv.textContent = result.message;
+            }
+        });
+    }
+    // Register form
+    const registerForm = document.querySelector('form#registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = registerForm.querySelector('input[type="email"]').value.trim();
+            const password = registerForm.querySelector('input[type="password"]').value;
+            const username = registerForm.querySelector('input[name="username"]')?.value.trim() || email.split('@')[0];
+            const result = demoRegister(email, password, username);
+            const errorDiv = document.getElementById('registerError');
+            if (result.success) {
+                window.location.href = 'login.html';
+            } else {
+                if (errorDiv) errorDiv.textContent = result.message;
+            }
+        });
     }
 });
         
