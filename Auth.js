@@ -1,3 +1,33 @@
+// Expose a global handleLogin for inline HTML compatibility
+window.handleLogin = function handleLogin() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const errorDiv = document.getElementById('errorMessage');
+    errorDiv.style.display = 'none';
+    if (!email || !password) {
+        errorDiv.textContent = 'Please fill in all fields';
+        errorDiv.style.display = 'block';
+        return;
+    }
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find(u => u.email === email && u.password === password);
+    if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        // Show welcome animation if present
+        var overlay = document.getElementById('welcomeOverlay');
+        var message = document.querySelector('.welcome-message');
+        if (overlay && message) {
+            message.textContent = 'Welcome back, ' + (user.firstName || user.username || user.email) + '!';
+            overlay.classList.add('active');
+        }
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 1500);
+    } else {
+        errorDiv.textContent = 'Invalid email or password. Please try again.';
+        errorDiv.style.display = 'block';
+    }
+}
 // Auth.js - LocalStorage-based authentication system (from Minto Portfolio)
 
 // Switch between login and register
